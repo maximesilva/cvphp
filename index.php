@@ -41,6 +41,9 @@ $tableau = [
         'url' => 'contact',
     ],
 ];
+/*if (isset($_POST['nom'])){
+    echo 'FAUX';
+}*/
 
 /* --- Traitement HTML ---- */
 include 'layout.php';
