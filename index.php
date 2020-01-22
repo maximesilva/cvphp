@@ -1,7 +1,29 @@
 <?php
 
 /* ------- routeur -------- */
+$route = [
+    '' => 'cv',
+    'hobby' => 'hobby',
+    'video' => 'pitchvideo',
+    'contact' => 'contact'
+];
+$valeurpage = '';
+
+
 if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+
+    if (isset($route[$page])) {
+        $valeurpage = $route[$page];
+    } else {
+        $valeurpage = '404';
+    }
+} else {
+    $valeurpage = 'cv';
+}
+
+
+/*if (isset($_GET['page'])) {
     $page = $_GET['page'];
 
     if ($page == '') {
@@ -17,11 +39,11 @@ if (isset($_GET['page'])) {
     }
 } else {
     $nomfichier = 'cv';
-}
+}*/
 
 /* ------- include page -------- */
 
-include 'pages/' . $nomfichier . '.php';
+include 'pages/' . $valeurpage . '.php';
 
 $tableau = [
     [
